@@ -9,3 +9,7 @@ def calculator_1():
   response = calc.calculate(request)
 
   return jsonify(response), 200
+
+@calc_route_bp.route("/calculator/2", methods=["POST"])
+def calculator_2():
+  return jsonify({"data": "Calculadora 2 a todo vapor!"}), 200
