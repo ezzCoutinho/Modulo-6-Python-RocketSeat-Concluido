@@ -7,8 +7,11 @@ class MockRequest:
     self.json = body
 
 def test_calculate():
-  mock_request = MockRequest(body={"numbers": [2.12, 4.54, 5.67]})
+  mock_request = MockRequest(body={"numbers": [2.12, 4.62, 1.32]})
   calculator = Calculator2()
+  response = calculator.calculate(mock_request)
+  print()
+  print(response)
 
-   
-  
+  assert isinstance(response, dict)
+  assert response == {"data": {"Calculator": 2, "result": 0.08}}
