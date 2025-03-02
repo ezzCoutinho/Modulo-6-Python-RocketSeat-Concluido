@@ -10,8 +10,8 @@ class Calculator2:
     body = request.json
     input_data = self.__validate_body(body)
     calculated_number = self.__process_data(input_data)
-    response = self.__format_response(calculated_number)
-    return response
+    formated_response = self.__format_response(calculated_number)
+    return formated_response
 
   def __validate_body(self, body: Dict) -> List[float]:
     if "numbers" not in body:
