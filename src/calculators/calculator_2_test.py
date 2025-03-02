@@ -1,5 +1,6 @@
 from typing import Dict
 from .calculator_2 import Calculator2
+from ..drivers.numpy_handler import NumpyHandler
 
 class MockRequest:
   def __init__(self, body: Dict) -> None:
@@ -7,7 +8,8 @@ class MockRequest:
 
 def test_calculate():
   mock_request = MockRequest(body={"numbers": [2.12, 4.62, 1.32]})
-  calculator = Calculator2()
+  driver = NumpyHandler()
+  calculator = Calculator2(driver)
   response = calculator.calculate(mock_request)
   print()
   print(response)
