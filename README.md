@@ -9,3 +9,6 @@ Criamos a nossa primeira calculadora, aplicando boas práticas de design de cód
 
 ###### Dia 01/03
 Terminamos os testes unitários na calculadora1, iniciamos a calculadora2, passando todas as bibliotecas externas para drivers e criando um "façade". Toda vez que formos instalar uma biblioteca externa, ela terá que passar pelos drivers, onde faremos o "façade". Instalamos uma nova biblioteca chamada numpy, que recebe N números e faz a derivação de números.
+
+###### Dia 02/03
+Terminamos os testes de integração na calculadora 2, aprendemos mais sobre interfaces e como elas funcionam no Python. Elas são bem parecidas com as do TypeScript. Vimos a injeção de dependências e herança, finalizando assim a calculadora 2.
