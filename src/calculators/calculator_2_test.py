@@ -1,5 +1,4 @@
 from typing import Dict
-from pytest import raises
 from .calculator_2 import Calculator2
 
 class MockRequest:
