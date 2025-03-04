@@ -12,3 +12,6 @@ Terminamos os testes unitários na calculadora1, iniciamos a calculadora2, passa
 
 ###### Dia 02/03
 Terminamos os testes de integração na calculadora 2, aprendemos mais sobre interfaces e como elas funcionam no Python. Elas são bem parecidas com as do TypeScript. Vimos a injeção de dependências e herança, finalizando assim a calculadora 2.
+
+###### Dia 04/03
+Demos início à calculadora 3, onde tivemos que adicionar um método da biblioteca numpy chamado `variance`. Fizemos a calculadora e o teste dela, utilizando um único mock de `variance`, sem usar o `NumpyHandler`. Depois, adicionamos na rota. Após isso, criamos nossos erros personalizados (que ficaram muito bons) e os adicionamos nas rotas de todas as calculadoras.
