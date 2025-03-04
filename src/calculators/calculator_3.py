@@ -8,16 +8,39 @@ class Calculator3:
   def calculate(self, request: FlaskRequest) -> Dict: # type: ignore
     body = request.json
     input_data = self.__validate_body(body)
-    formated_response = self.__format_response()
+
+    variance = self.__calculate_variance(input_data)
+    multiplication = self.__calculate_multiplication(input_data)
+    self.__verify_results(variance, multiplication)
+
+    formated_response = self.__format_response(variance)
+    return formated_response
     
   def __validate_body(self, body: Dict) -> List[float]:
     if "numbers" not in body:
       raise Exception("body mal formatado!")
     
-  def __format_response(self, calculated_number: float) -> Dict:
+    input_data = body["numbers"]
+    return [float(i) for i in input_data]
+  
+  def __calculate_variance(self, numbers: List[float]) -> float:
+    variance = self.__driver_handler.variance(numbers)
+    return variance
+  
+  def __calculate_multiplication(self, numbers: List[float]) -> float:
+    multiplication = 1
+    for num in numbers: multiplication *= num
+    return multiplication
+  
+  def __verify_results(self, variance: float, multiplication: float) -> None:
+    if variance < multiplication:
+      raise Exception("Falha no processo: Variance menor que multiplication")
+        
+  def __format_response(self, variance: float) -> Dict:
     return {
       "data": {
         "Calculator": 3,
-        "result": round(calculated_number, 2)
+        "value": variance,
+        "Success": True
     } }
   
